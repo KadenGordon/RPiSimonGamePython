@@ -16,3 +16,6 @@ class SimonGame(object):
 			#now for some variables
 			self.type.Button = GPIO.IN 
 			self.type.LED = GPIO.OUT
+			self.on = False
+			self.off = True
+			
