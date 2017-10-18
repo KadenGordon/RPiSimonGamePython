@@ -13,4 +13,5 @@ If that doesn't work, create an issue.
 ## To-Do
 - Complete game class files
 - Make explanation files and in file comments
+- Show how to do wiring
 - Finish the actual game program
