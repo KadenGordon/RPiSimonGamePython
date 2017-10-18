@@ -1,5 +1,5 @@
 # Simon Game on Raspberry Pi with Python!
-The packages you need to install are these:
+These are the packages you need to install:
 ```bash
 $ sudo apt-get install python-dev python-rpi.gpio python3
 ```
