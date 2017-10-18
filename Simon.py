@@ -1,7 +1,6 @@
 import RPi.GPIO as GPIO #for GPIO functions not directly related to LEDs and buttons
 import time #for timing
 from GPIO import LED, Button #my own GPIO pin classes
-import RPi.GPIO
 
 GPIO.setmode(GPIO.BOARD)
 
