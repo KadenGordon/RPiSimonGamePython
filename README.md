@@ -4,7 +4,7 @@ These are the packages you need to install:
 $ sudo apt-get install python-dev python-rpi.gpio python3
 ```
 
-After you install the packages, cd into the directory and run thr python script:
+After you install the packages, cd into the directory and run the python script:
 ```bash
 $ cd RPiSimonGamePython
 $ python3 Simon.py
