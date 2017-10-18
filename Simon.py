@@ -6,7 +6,15 @@ from SimonClass import SimonGame
 GPIO.setmode(GPIO.BOARD)
 
 #creates game object with these pins
-game = SimonGame()
+game = SimonGame(
+	3,
+	5,
+	8,
+	10,
+	11,
+	13,
+	16,
+	18)
 
 
 
