@@ -1,4 +1,15 @@
 # Simon Game on Raspberry Pi with Python!
-So to make this work you need this command (I believe) ```$ sudo apt-get install python-dev python-rpi.gpio```
-If that doesn't work create an issue.
-I will also eventually be adding different class files and files that explain how to wire your raspberry pi. But that'll come later.
+The packages you need to install are these:
+```bash
+$ sudo apt-get install python-dev python-rpi.gpio python3
+```
+
+After you install the packages, cd into the directory and do this:
+```bash
+$ python3 Simon.py
+```
+If that doesn't work, create an issue.
+
+## To-Do
+- Make different class files
+- Make explaniation files
