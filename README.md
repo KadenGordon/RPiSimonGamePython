@@ -11,5 +11,6 @@ $ python3 Simon.py
 If that doesn't work, create an issue.
 
 ## To-Do
-- Make different class files
-- Make explaniation files
+- Complete game class files
+- Make explanation files and in file comments
+- Finish the actual game program
