@@ -4,38 +4,39 @@ import random
 import math
 
 class SimonGame(object):
-	def __init__(self, upLED, rightLED, downLED, leftLED, upButton, rightButton, downButton, leftButton):
+	def __init__(self, tlLED, trLED, blLED, brLED, tlButton, trButton, blButton, brButton):
 		#let's create the LEDs
-		self.UpLED = LED(upLED)
-		self.RightLED = LED(RightLED)
-		self.DownLED = LED(downLED)
-		self.LeftLED = LED(leftLED)
+		self.TlLED = LED(tlLED)
+		self.TrLED = LED(trLED)
+		self.BlLED = LED(blLED)
+		self.BrLED = LED(brLED)
 		#okay. Now the buttons
-		self.UpButton = Button(upButton)
-		self.RightButton = Button(rightButton)
-		self.DownButton = Button(downButton)
-		self.LeftButton = Button(leftButton)
+		self.TlButton = Button(tlButton)
+		self.TrButton = Button(trButton)
+		self.BlButton = Button(blButton)
+		self.BrButton = Button(brButton)
 		#now for some variables
 		self.score = 0
-		self.game_index = 0
-		#lets make some looping easier
-		self.LEDs = [UpLED,RightLED,DownLED,LeftLED]
+		self.gameIndex = 0
 		self.level = 0
-		self.pattern = []
+		self.levelPattern = []
 		self.alive = True
+		#lets make some looping easier
+		self.LEDs = [TlLED,TrLED,BlLED,BrLED]
+		self.Buttons = [TlButton,TrButton,BlButton,BrButton]
+		
+	
 	def start(self):
 		self.startSequence()
 		self.score = 0
-		self.game_index = 0
-		while self.alive:
-			self.createLevel(level)
-			self.createLevel += 1
+		self.gameIndex = 0
 
-		
+
 	def createLevel(self, level):
-		self.pattern = []
+		pattern = []
 		for i in range (1,level):
-			self.pattern.append(random.randint(1,4))
+			pattern.append(random.randint(1,4))
+		return pattern
 
 	def startSequence(self):
 		for i in range(1,5):

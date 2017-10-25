@@ -22,6 +22,7 @@ game = SimonGame(
 timeBetweenPresses = 750
 timeToPress = timeBetweenPresses
 #loop
+game.start()
 try:
     #forever
     while True:
