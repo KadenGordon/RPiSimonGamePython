@@ -16,9 +16,7 @@ class LED:
         
     def cleanup(self):
         GPIO.cleanup(self.pin)
-    
-    def getPin(self):
-        return self.pin
+
         
 class Button:
     def __init__(self, pin):
@@ -27,9 +25,6 @@ class Button:
         
     def isPressed(self):
         return not GPIO.input(self.pin)
-    
-    def getPin(self):
-        return self.pin
     
     def cleanup(self):
         GPIO.cleanup(self.pin)
