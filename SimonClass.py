@@ -65,7 +65,7 @@ class SimonGame(object):
 		return keys
 
 	def gameOver(self):
-
+		pass
 
 	def 
 
