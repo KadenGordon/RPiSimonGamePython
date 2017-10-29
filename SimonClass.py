@@ -43,12 +43,12 @@ class SimonGame(object):
 		for i in range(1,5):
 			LED = self.LEDs[i%4]
 			LED.turnOn()
-			wait(1)
+			wait(0.5)
 			LED.turnOff()
 		for LED in self.LEDs:
 			LED.turnOn()
 		wait(1)
-		for LED in LEDs:
+		for LED in self.LEDs:
 			LED.turnOff()
 
 	def cleanup(self):
