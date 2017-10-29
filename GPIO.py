@@ -4,7 +4,7 @@ class LED:
     def __init__(self, port):
         self.pin = port
         #GPIO.setmode(GPIO.BOARD)
-        GPIO.setup(pin, GPIO.OUT)
+        GPIO.setup(self.pin, GPIO.OUT)
         
         self.ON = False
         self.OFF = True
