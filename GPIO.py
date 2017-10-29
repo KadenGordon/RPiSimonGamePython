@@ -1,37 +1,37 @@
-import RPi.GPIO as GPIOControl
+import RPi.GPIO as GPIO
 
 class LED:
     def __init__(self, port):
-        pin = port
-        #GPIOControl.setmode(GPIOControl.BOARD)
-        GPIOControl.setup(pin, GPIOControl.OUT)
+        self.pin = port
+        #GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(pin, GPIO.OUT)
         
-        ON = False
-        OFF = True
+        self.ON = False
+        self.OFF = True
         
     def turnOn(self):
-        GPIOControl.output(pin, ON)
+        GPIO.output(self.pin, self.ON)
     
     def turnOff(self):
-        GPIOControl.output(pin, OFF)
+        GPIO.output(self.pin, self.OFF)
         
     def cleanup(self):
-        GPIOControl.cleanup(pin)
+        GPIO.cleanup(self.pin)
 
     def getPin(self):
-        return pin 
+        return self.pin 
         
 class Button:
     def __init__(self, port):
-        pin = port
-        #GPIOControl.setmode(GPIOControl.BOARD)
-        GPIOControl.setup(pin, GPIOControl.IN, pull_up_down=GPIOControl.PUD_UP)
+        self.pin = port
+        #GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(self.pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         
     def isPressed(self):
-        return not GPIOControl.input(pin)
+        return not GPIO.input(self.pin)
     
     def cleanup(self):
-        GPIOControl.cleanup(pin)
+        GPIO.cleanup(self.pin)
 
     def getPin(self):
-        return pin
+        return self.pin
