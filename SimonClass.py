@@ -4,26 +4,26 @@ import random
 import math
 
 class SimonGame(object):
-	def __init__(self, tlLED, trLED, blLED, brLED, tlButton, trButton, blButton, brButton):
+	def __init__(self, tlLEDpin, trLEDpin, brLEDpin, blLEDpin, tlButtonpin, trButtonpin, brButtonpin, blButtonpin):
 		#let's create the LEDs
-		self.TlLED = LED(tlLED)
-		self.TrLED = LED(trLED)
-		self.BlLED = LED(blLED)
-		self.BrLED = LED(brLED)
+		self.tlLED = LED(tlLEDpin)
+		self.trLED = LED(trLEDpin)
+		self.brLED = LED(brLEDpin)
+		self.blLED = LED(blLEDpin)
 		#okay. Now the buttons
-		self.TlButton = Button(tlButton)
-		self.TrButton = Button(trButton)
-		self.BlButton = Button(blButton)
-		self.BrButton = Button(brButton)
+		self.tlButton = Button(tlButtonpin)
+		self.trButton = Button(trButtonpin)
+		self.brButton = Button(brButtonpin)
+		self.blButton = Button(blButtonpin)
 		#now for some variables
 		self.score = 0
 		self.gameIndex = 0
 		self.level = 0
 		self.levelPattern = []
-		self.alive = True
+		alive = True
 		#lets make some looping easier
-		self.LEDs = [TlLED,TrLED,BlLED,BrLED]
-		self.Buttons = [TlButton,TrButton,BlButton,BrButton]
+		self.LEDs = [tlLED,trLED,brLED,blLED]
+		self.Buttons = [tlButton,trButton,brButton,blButton]
 		
 	
 	def start(self):
@@ -34,7 +34,7 @@ class SimonGame(object):
 
 	def createLevel(self, level):
 		pattern = []
-		for i in range (1,level):
+		for i in range (0,level):
 			pattern.append(random.randint(1,4))
 		return pattern
 
@@ -49,3 +49,24 @@ class SimonGame(object):
 		wait(1)
 		for LED in LEDs:
 			LED.turnOff()
+
+	def cleanup(self):
+		for LED in self.LEDs:
+			LED.cleanup()
+		for Button in self.Buttons:
+			Button.cleanup()
+
+	def getKeys(self):
+		keys = [0,0,0,0]
+		i = 0
+		for button in self.Buttons:
+			keys[i] = button.isPresseed()
+			i += 1
+		return keys
+
+	def gameOver(self):
+
+
+	def 
+
+	
