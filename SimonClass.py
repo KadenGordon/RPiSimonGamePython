@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 from GPIO import LED, Button
 import random
 import math
+from time import sleep as wait
 
 class SimonGame(object):
 	def __init__(self, tlLEDpin, trLEDpin, brLEDpin, blLEDpin, tlButtonpin, trButtonpin, brButtonpin, blButtonpin):
