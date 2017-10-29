@@ -66,7 +66,3 @@ class SimonGame(object):
 
 	def gameOver(self):
 		pass
-
-	def 
-
-	
