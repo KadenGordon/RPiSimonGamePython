@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 class LED:
     def __init__(self, port):
         pin = port
-        GPIO.setmode(GPIO.BOARD)
+        #GPIO.setmode(GPIO.BOARD)
         GPIO.setup(pin, GPIO.OUT)
         
         ON = False
@@ -24,7 +24,7 @@ class LED:
 class Button:
     def __init__(self, port):
         pin = port
-        GPIO.setmode(GPIO.BOARD)
+        #GPIO.setmode(GPIO.BOARD)
         GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         
     def isPressed(self):
