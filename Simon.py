@@ -3,6 +3,7 @@ from GPIO import LED, Button #my own GPIO device classes
 from SimonClass import SimonGame
 import RPi.GPIO as GPIO
 print GPIO.RPI_INFO
+GPIO.setmode(GPIO.BOARD)
 #creates game object with these pins
 game = SimonGame(
 	3,  #Top Left LED
