@@ -1,7 +1,7 @@
 import time #for timing
 from GPIO import LED, Button #my own GPIO device classes
 from SimonClass import SimonGame
-
+print GPIO.RPI_INFO
 #creates game object with these pins
 game = SimonGame(
 	3,  #Top Left LED
