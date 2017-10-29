@@ -22,8 +22,8 @@ class SimonGame(object):
 		self.levelPattern = []
 		alive = True
 		#lets make some looping easier
-		self.LEDs = [tlLED,trLED,brLED,blLED]
-		self.Buttons = [tlButton,trButton,brButton,blButton]
+		self.LEDs = [self.tlLED,self.trLED,self.brLED,self.blLED]
+		self.Buttons = [self.tlButton,self.trButton,self.brButton,self.blButton]
 		
 	
 	def start(self):
