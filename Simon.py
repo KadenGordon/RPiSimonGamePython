@@ -53,9 +53,10 @@ try:
 			else:
 				game.LEDs[buttonpos].turnOff()
 			i += 1
-			wait(0.1)
+			wait(0.05)
 		print "LEVEL COMPLETE"
 		game.level += 1
+		wait(1)
 			
 
 		#this is basically my timer
