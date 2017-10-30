@@ -32,7 +32,7 @@ try:
 	while True:
 		position = 0
 		pattern = game.createLevel()
-		game.flashPattern(pattern)
+		game.flashPattern(game.pattern)
 		#play level
 		i = 0
 		while position < len(pattern):
