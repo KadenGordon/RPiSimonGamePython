@@ -2,7 +2,8 @@ from time import sleep as wait #for timing
 from GPIO import LED, Button #my own GPIO device classes
 from SimonClass import SimonGame
 import RPi.GPIO as GPIO
-print GPIO.RPI_INFO
+
+
 GPIO.setmode(GPIO.BOARD)
 #creates game object with these pins
 game = SimonGame(
@@ -18,8 +19,8 @@ game = SimonGame(
 game.turnOffLEDs()
 wait(3)
 #stuff to start the game
-level = 1
-position = 0
+
+
 #set stuff up for a timer
 timeBetweenPresses = 750
 timeToPress = timeBetweenPresses
@@ -28,15 +29,19 @@ game.start()
 try:
 	#forever
 	while True:
+		position = 0
 		pattern = game.createLevel(level)
+		game.flashPattern(pattern)
 		#play level
 		while position <= len(pattern):
 			goal = pattern[position]
 			keys = game.getKeys()
-			for button in keys:
+			i = position
+			while i < position:
+				for button in keys:
 				#check if it's the right one, if it is, move on to next position, else game over.
-				if button and keys[button] == pattern[position]:
-					pass
+					if button and keys[button] == pattern[position]:
+						position += 1
 
 		#this is basically my timer
 		timeToPress += 1
