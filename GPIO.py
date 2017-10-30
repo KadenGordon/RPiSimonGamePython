@@ -37,6 +37,6 @@ class Button:
         return self.pin
 
     def waitUntilNotPressed(self):
-        while self.isPressed:
+        while self.isPressed():
             pass
         wait(0.2)
