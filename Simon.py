@@ -51,8 +51,8 @@ try:
 			
 
 		#this is basically my timer
-		timeToPress += 1
-		wait(0.001)
+		timeToPress += 10
+		wait(0.01)
 except KeyboardInterrupt:
 	#for LED in cleanups:
 	#    object.cleanup()
