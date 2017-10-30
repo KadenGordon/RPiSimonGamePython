@@ -47,12 +47,12 @@ try:
 						print "did a thing"
 					else: 
 						print "fail " + str(button)
-				print 
+				
 			
 
 		#this is basically my timer
-		timeToPress += 10
-		wait(0.01)
+		timeToPress += 100
+		wait(0.1)
 except KeyboardInterrupt:
 	#for LED in cleanups:
 	#    object.cleanup()
