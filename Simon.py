@@ -5,7 +5,7 @@ import RPi.GPIO as GPIO
 
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setwarnings
+GPIO.setwarnings(False)
 #creates game object with these pins
 game = SimonGame(
 	3,  #Top Left LED
