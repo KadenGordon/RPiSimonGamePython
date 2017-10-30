@@ -45,6 +45,7 @@ class SimonGame(object):
 			LED.turnOn()
 			wait(0.25)
 			LED.turnOff()
+		wait(0.15)
 		for LED in self.LEDs:
 			LED.turnOn()
 		wait(1)
