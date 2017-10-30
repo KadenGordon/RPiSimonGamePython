@@ -35,7 +35,7 @@ class SimonGame(object):
 
 	def createLevel(self, level):
 		pattern = []
-		for i in range (0,level):
+		for i in range (0,level + 1):
 			pattern.append(random.randint(0,3))
 		return pattern
 
