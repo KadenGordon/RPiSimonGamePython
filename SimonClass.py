@@ -19,7 +19,7 @@ class SimonGame(object):
 		#now for some variables
 		self.score = 0
 		self.gameIndex = 0
-		self.level = 0
+		self.level = 1
 		self.levelPattern = []
 		alive = True
 		#lets make some looping easier
@@ -71,4 +71,11 @@ class SimonGame(object):
 
 	def turnOffLEDs(self):
 		for LED in self.LEDs:
+			LED.turnOff()
+
+	def flashPattern(self, pattern):
+		for flash in pattern:
+			LED = self.LEDs[flash]
+			LED.turnOn()
+			wait(1)
 			LED.turnOff()
