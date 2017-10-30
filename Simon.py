@@ -50,6 +50,7 @@ try:
 
 				else: 
 					print "fail " + str(button)
+				button.waitUntilNotPressed()
 			else:
 				game.LEDs[buttonpos].turnOff()
 			i += 1
@@ -64,9 +65,6 @@ try:
 		timeToPress += 100
 		wait(0.1)
 except KeyboardInterrupt:
-	#for LED in cleanups:
-	#    object.cleanup()
-	#   print(object)
-	pass
+	GPIO.cleanup()
 except SystemExit:
 	GPIO.cleanup()
