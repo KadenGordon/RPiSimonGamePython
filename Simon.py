@@ -41,11 +41,12 @@ try:
 			
 			for button in keys:
 			#check if it's the right one, if it is, move on to next position, else game over.
-				if button and keys[button] == goal:
-					position += 1
-					print "did a thing"
-				else: 
-					print "fail"
+				if button:
+					if keys[button] == goal:
+						position += 1
+						print "did a thing"
+					else: 
+						print "fail" + str(button)
 			
 
 		#this is basically my timer
