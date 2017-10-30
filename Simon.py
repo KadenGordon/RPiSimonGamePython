@@ -39,14 +39,15 @@ try:
 			keys = game.getKeys()
 			i = position
 			
-			for button in keys:
+			for button in range(0,len(pattern) + 1):
 			#check if it's the right one, if it is, move on to next position, else game over.
-				if button:
-					if keys[button] == goal:
+				if game.Buttons[button].isPressed():
+					if keys[position] == game.Buttons[position]:
 						position += 1
 						print "did a thing"
 					else: 
-						print "fail" + str(button)
+						print "fail " + str(button)
+				print 
 			
 
 		#this is basically my timer
