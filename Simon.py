@@ -56,6 +56,7 @@ try:
 			wait(0.05)
 		print "LEVEL COMPLETE"
 		game.level += 1
+		game.turnOffLEDs()
 		wait(1)
 			
 
