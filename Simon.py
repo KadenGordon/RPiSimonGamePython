@@ -49,7 +49,8 @@ try:
 					print "fail " + str(button)
 			i += 1
 			wait(0.1)
-				
+		print "LEVEL COMPLETE"
+		game.level += 1
 			
 
 		#this is basically my timer
