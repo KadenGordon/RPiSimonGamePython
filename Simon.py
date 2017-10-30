@@ -5,6 +5,7 @@ import RPi.GPIO as GPIO
 
 
 GPIO.setmode(GPIO.BOARD)
+GPIO.setwarnings
 #creates game object with these pins
 game = SimonGame(
 	3,  #Top Left LED
@@ -31,12 +32,12 @@ try:
 	#forever
 	while True:
 		position = 0
-		pattern = game.createLevel()
+		game.createLevel()
 		game.flashPattern(game.pattern)
 		#play level
 		i = 0
 		while position < len(game.pattern):
-			goal = pattern[position]
+			goal = game.pattern[position]
 			keys = game.getKeys()
 			#check if it's the right one, if it is, move on to next position, else game over.
 			buttonpos = i%4

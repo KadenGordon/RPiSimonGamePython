@@ -34,7 +34,7 @@ class SimonGame(object):
 
 
 	def createLevel(self):
-		return self.pattern.append(random.randint(0,3))
+		self.pattern.append(random.randint(0,3))
 
 	def startSequence(self):
 		for i in range(0,8):
