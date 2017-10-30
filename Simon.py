@@ -38,13 +38,13 @@ try:
 			goal = pattern[position]
 			keys = game.getKeys()
 			i = position
-			while i < position:
-				for button in keys:
-				#check if it's the right one, if it is, move on to next position, else game over.
-					if button and keys[button] == goal:
-						position += 1
-						print "did a thing"
-				keys = game.getKeys()
+			
+			for button in keys:
+			#check if it's the right one, if it is, move on to next position, else game over.
+				if button and keys[button] == goal:
+					position += 1
+					print "did a thing"
+			
 
 		#this is basically my timer
 		timeToPress += 1
