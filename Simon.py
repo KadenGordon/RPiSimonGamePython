@@ -44,6 +44,7 @@ try:
 					if button and keys[button] == goal:
 						position += 1
 						print "did a thing"
+				keys = game.getKeys()
 
 		#this is basically my timer
 		timeToPress += 1
