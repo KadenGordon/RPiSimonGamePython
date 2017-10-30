@@ -40,7 +40,7 @@ class SimonGame(object):
 		return pattern
 
 	def startSequence(self):
-		for i in range(1,9):
+		for i in range(0,8):
 			LED = self.LEDs[i%4]
 			LED.turnOn()
 			wait(0.25)
