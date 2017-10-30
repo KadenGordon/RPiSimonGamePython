@@ -67,3 +67,7 @@ class SimonGame(object):
 
 	def gameOver(self):
 		pass
+
+	def turnOffLEDs(self):
+		for LED in self.LEDs:
+			LED.turnOff()

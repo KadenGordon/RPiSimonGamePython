@@ -15,6 +15,7 @@ game = SimonGame(
 	16, #Bottom Right Button
 	18) #Bottom Left Button
 
+game.turnOffLEDs()
 #stuff to start the game
 level = 1
 position = 0
