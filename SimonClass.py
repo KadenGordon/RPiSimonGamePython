@@ -75,6 +75,6 @@ class SimonGame(object):
 			print flash
 			LED = self.LEDs[flash]
 			LED.turnOn()
-			wait(0.8)
+			wait(0.6)
 			LED.turnOff()
 			wait(0.2)
