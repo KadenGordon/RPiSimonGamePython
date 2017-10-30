@@ -6,7 +6,7 @@ $ sudo apt-get install python-dev python-rpi.gpio python2.7
 
 After you install the packages, do these commands:
 ```bash
-$ cd /home/pi
+$ cd ~
 $ git clone https://github.com/KadenGordon/RPiSimonGame
 $ cd RPiSimonGamePython
 $ python Simon.py
