@@ -1,4 +1,4 @@
-import time #for timing
+from time import sleep as wait #for timing
 from GPIO import LED, Button #my own GPIO device classes
 from SimonClass import SimonGame
 import RPi.GPIO as GPIO
@@ -16,6 +16,7 @@ game = SimonGame(
 	18) #Bottom Left Button
 
 game.turnOffLEDs()
+wait(3)
 #stuff to start the game
 level = 1
 position = 0
@@ -39,7 +40,7 @@ try:
 
 		#this is basically my timer
 		timeToPress += 1
-		time.sleep(0.001)
+		wait(0.001)
 except KeyboardInterrupt:
 	#for LED in cleanups:
 	#    object.cleanup()
