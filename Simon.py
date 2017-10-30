@@ -39,7 +39,7 @@ try:
 			goal = pattern[position]
 			keys = game.getKeys()
 			#check if it's the right one, if it is, move on to next position, else game over.
-			buttonpos = [i%4]
+			buttonpos = i%4
 			button = game.Buttons[buttonpos]
 			if button.isPressed():
 				if game.Buttons[goal].isPressed():
