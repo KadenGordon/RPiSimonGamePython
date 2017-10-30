@@ -34,19 +34,21 @@ try:
 		pattern = game.createLevel(game.level)
 		game.flashPattern(pattern)
 		#play level
+		i = 0
 		while position <= len(pattern):
 			goal = pattern[position]
 			keys = game.getKeys()
-			i = position
-			
-			for button in range(0,len(pattern) + 1):
 			#check if it's the right one, if it is, move on to next position, else game over.
-				if game.Buttons[button].isPressed():
-					if keys[position] == game.Buttons[position]:
-						position += 1
-						print "did a thing"
-					else: 
-						print "fail " + str(button)
+			buttonpos = [i%4]
+			button = game.Buttons[buttonpos]
+			if button.isPressed():
+				if game.Buttons[goal].isPressed():
+					position += 1
+					print "did a thing"
+				else: 
+					print "fail " + str(button)
+			i += 1
+			wait(0.1)
 				
 			
 
