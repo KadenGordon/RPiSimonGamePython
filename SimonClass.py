@@ -75,6 +75,7 @@ class SimonGame(object):
 
 	def flashPattern(self, pattern):
 		for flash in pattern:
+			print flash
 			LED = self.LEDs[flash]
 			LED.turnOn()
 			wait(1)
