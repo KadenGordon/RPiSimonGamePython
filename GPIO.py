@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+from time import sleep as wait
 
 class LED:
     def __init__(self, port):
