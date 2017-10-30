@@ -62,7 +62,7 @@ class SimonGame(object):
 		keys = [0,0,0,0]
 		i = 0
 		for button in self.Buttons:
-			keys[i] = button.isPresseed()
+			keys[i] = button.isPressed()
 			i += 1
 		return keys
 
