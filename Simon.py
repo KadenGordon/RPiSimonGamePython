@@ -35,19 +35,22 @@ try:
 		game.flashPattern(game.pattern)
 		#play level
 		i = 0
-		while position < len(pattern):
+		while position < len(game.pattern):
 			goal = pattern[position]
 			keys = game.getKeys()
 			#check if it's the right one, if it is, move on to next position, else game over.
 			buttonpos = i%4
 			button = game.Buttons[buttonpos]
 			if button.isPressed():
+				button.turnOn()
 				if game.Buttons[goal].isPressed():
 					position += 1
 					print "did a thing"
 
 				else: 
 					print "fail " + str(button)
+			else:
+				button.turnOff()
 			i += 1
 			wait(0.1)
 		print "LEVEL COMPLETE"
