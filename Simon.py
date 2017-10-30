@@ -31,7 +31,7 @@ try:
 	#forever
 	while True:
 		position = 0
-		pattern = game.createLevel(game.level)
+		pattern = game.createLevel()
 		game.flashPattern(pattern)
 		#play level
 		i = 0

@@ -20,7 +20,7 @@ class SimonGame(object):
 		self.score = 0
 		self.gameIndex = 0
 		self.level = 1
-		self.levelPattern = []
+		self.pattern = []
 		alive = True
 		#lets make some looping easier
 		self.LEDs = [self.tlLED,self.trLED,self.brLED,self.blLED]
@@ -33,11 +33,8 @@ class SimonGame(object):
 		self.gameIndex = 0
 
 
-	def createLevel(self, level):
-		pattern = []
-		for i in range (0,level):
-			pattern.append(random.randint(0,3))
-		return pattern
+	def createLevel(self):
+		return pattern.append(random.randint(0,3))
 
 	def startSequence(self):
 		for i in range(0,8):
