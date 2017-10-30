@@ -45,6 +45,7 @@ try:
 				if game.Buttons[goal].isPressed():
 					position += 1
 					print "did a thing"
+					wait(2)
 				else: 
 					print "fail " + str(button)
 			i += 1
