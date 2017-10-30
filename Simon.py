@@ -43,7 +43,7 @@ try:
 			buttonpos = i%4
 			button = game.Buttons[buttonpos]
 			if button.isPressed():
-				button.turnOn()
+				game.LEDs[buttonpos].turnOn()
 				if game.Buttons[goal].isPressed():
 					position += 1
 					print "did a thing"
@@ -51,7 +51,7 @@ try:
 				else: 
 					print "fail " + str(button)
 			else:
-				button.turnOff()
+				game.LEDs[buttonspos].turnOff()
 			i += 1
 			wait(0.1)
 		print "LEVEL COMPLETE"
