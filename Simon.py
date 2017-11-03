@@ -54,7 +54,6 @@ try:
 			else:
 				game.LEDs[buttonpos].turnOff()
 			i += 1
-			wait(0.05)
 		print "LEVEL COMPLETE"
 		game.level += 1
 		game.turnOffLEDs()
