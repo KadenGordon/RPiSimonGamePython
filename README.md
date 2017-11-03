@@ -4,8 +4,10 @@ These are the packages you need to install:
 $ sudo apt-get install python-dev python-rpi.gpio python2.7
 ```
 
-After you install the packages, cd into the directory and run the python script:
+After you install the packages, do these commands:
 ```bash
+$ cd ~
+$ git clone https://github.com/KadenGordon/RPiSimonGamePython
 $ cd RPiSimonGamePython
 $ python Simon.py
 ```
