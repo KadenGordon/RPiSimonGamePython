@@ -11,7 +11,7 @@ class SimonGame(object):
 		#let's create the LEDs
 		#Okay. Personally, this is gross. Please don't use this lol
 		self.LED = []
-		for i in range(1, 4):
+		for i in range(0, 4):
 			self.LED.append(LED(leds[i]))
 			
 		# self.tlLED = LED(leds[1])
@@ -20,7 +20,7 @@ class SimonGame(object):
 		# self.blLED = LED(leds[4])
 		#okay. Now the buttons
 		self.Button = []
-		for i in range(1, 4):
+		for i in range(0, 4):
 			self.Button.append(Button(buttons[i]))
 		
 		#self.tlButton = Button(tlButtonpin)
