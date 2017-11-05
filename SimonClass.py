@@ -5,17 +5,26 @@ import math
 from time import sleep as wait
 
 class SimonGame(object):
-	def __init__(self, tlLEDpin, trLEDpin, brLEDpin, blLEDpin, tlButtonpin, trButtonpin, brButtonpin, blButtonpin):
+	def __init__(self, leds, buttons):
+		#Pass the LEDs as a dict, please.
+		
 		#let's create the LEDs
-		self.tlLED = LED(tlLEDpin)
-		self.trLED = LED(trLEDpin)
-		self.brLED = LED(brLEDpin)
-		self.blLED = LED(blLEDpin)
+		#Okay. Personally, this is gross. Please don't use this lol
+		for i in range(1, 4):
+			self.LED[i] = LED(leds[i])
+			
+		# self.tlLED = LED(leds[1])
+		# self.trLED = LED(leds[2])
+		# self.brLED = LED(leds[3])
+		# self.blLED = LED(leds[4])
 		#okay. Now the buttons
-		self.tlButton = Button(tlButtonpin)
-		self.trButton = Button(trButtonpin)
-		self.brButton = Button(brButtonpin)
-		self.blButton = Button(blButtonpin)
+		for i in range(1, 4):
+			self.BUTTON[i] = Button(buttons[i])
+		
+		#self.tlButton = Button(tlButtonpin)
+		#self.trButton = Button(trButtonpin)
+		#self.brButton = Button(brButtonpin)
+		#self.blButton = Button(blButtonpin)
 		#now for some variables
 		self.score = 0
 		self.gameIndex = 0
@@ -23,10 +32,10 @@ class SimonGame(object):
 		self.pattern = []
 		alive = True
 		#lets make some looping easier
-		self.LEDs = [self.tlLED,self.trLED,self.brLED,self.blLED]
-		self.Buttons = [self.tlButton,self.trButton,self.brButton,self.blButton]
+		# self.LEDs = [self.tlLED,self.trLED,self.brLED,self.blLED]
+		# self.Buttons = [self.tlButton,self.trButton,self.brButton,self.blButton]
 		
-	
+	 
 	def start(self):
 		self.startSequence()
 		self.score = 0
@@ -38,27 +47,27 @@ class SimonGame(object):
 
 	def startSequence(self):
 		for i in range(0,8):
-			LED = self.LEDs[i%4]
+			LED = self.LED[i%4]
 			LED.turnOn()
 			wait(0.1)
 			LED.turnOff()
 		wait(0.15)
-		for LED in self.LEDs:
+		for LED in self.LED:
 			LED.turnOn()
 		wait(1)
-		for LED in self.LEDs:
+		for LED in self.LED:
 			LED.turnOff()
 
 	def cleanup(self):
-		for LED in self.LEDs:
+		for LED in self.LED:
 			LED.cleanup()
-		for Button in self.Buttons:
+		for Button in self.BUTTON:
 			Button.cleanup()
 
 	def getKeys(self):
 		keys = [0,0,0,0]
 		i = 0
-		for button in self.Buttons:
+		for button in self.BUTTON:
 			keys[i] = button.isPressed()
 			i += 1
 		return keys
@@ -67,13 +76,13 @@ class SimonGame(object):
 		pass
 
 	def turnOffLEDs(self):
-		for LED in self.LEDs:
+		for LED in self.LED:
 			LED.turnOff()
 
 	def flashPattern(self, pattern):
 		for flash in pattern:
 			print flash
-			LED = self.LEDs[flash]
+			LED = self.LED[flash]
 			LED.turnOn()
 			wait(0.6)
 			LED.turnOff()
