@@ -17,6 +17,8 @@ game = SimonGame([3, 5, 8, 10], [11, 13, 16, 18])
 
 game.turnOffLEDs()
 #stuff to start the game
+class fail ( exception ):
+	pass
 
 game.start()
 wait(1)
@@ -42,8 +44,7 @@ def playgame():
 					else: 
 						game.gameOver()
 						print "fail " + str(button)
-						break
-						break
+						break break
 					button.waitUntilNotPressed()
 				else:
 					game.LED[buttonpos].turnOff()
@@ -62,3 +63,5 @@ except KeyboardInterrupt:
 	GPIO.cleanup()
 except SystemExit:
 	GPIO.cleanup()
+except fail:
+	playgame()
