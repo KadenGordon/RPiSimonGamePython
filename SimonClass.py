@@ -63,14 +63,6 @@ class SimonGame(object):
 		for Button in self.Button:
 			Button.cleanup()
 
-	def getKeys(self):
-		keys = [0,0,0,0]
-		i = 0
-		for button in self.Button:
-			keys[i] = button.isPressed()
-			i += 1
-		return keys
-
 	def gameOver(self):
 		for i in range(3):
 			self.turnOnLEDs()

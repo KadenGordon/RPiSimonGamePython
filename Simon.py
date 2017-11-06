@@ -30,7 +30,6 @@ try:
 		i = 0
 		while position < len(game.pattern):
 			goal = game.pattern[position]
-			keys = game.getKeys()
 			#check if it's the right one, if it is, move on to next position, else game over.
 			buttonpos = i%4
 			button = game.Button[buttonpos]
