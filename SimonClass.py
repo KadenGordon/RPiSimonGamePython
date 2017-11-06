@@ -9,32 +9,13 @@ class SimonGame(object):
 		#let's create the LEDs
 		self.LED = [(lambda x: LED(leds[x]))(x) for x in range(len(leds))]
 		self.Button = [(lambda x: Button(buttons[x]))(x) for x in range(len(buttons))]
-		#for i in range(0, 4):
-			#self.LED.append(LED(leds[i]))
-			
-		# self.tlLED = LED(leds[1])
-		# self.trLED = LED(leds[2])
-		# self.brLED = LED(leds[3])
-		# self.blLED = LED(leds[4])
-		#okay. Now the buttons
-		# for i in range(0, 4):
-		#	self.Button.append(Button(buttons[i]))
-		
-		#self.tlButton = Button(tlButtonpin)
-		#self.trButton = Button(trButtonpin)
-		#self.brButton = Button(brButtonpin)
-		#self.blButton = Button(blButtonpin)
 		#now for some variables
 		self.score = 0
 		self.gameIndex = 0
 		self.level = 1
 		self.pattern = []
 		alive = True
-		#lets make some looping easier
-		# self.LEDs = [self.tlLED,self.trLED,self.brLED,self.blLED]
-		# self.Buttons = [self.tlButton,self.trButton,self.brButton,self.blButton]
 		
-	 
 	def start(self):
 		self.startSequence()
 		self.score = 0
