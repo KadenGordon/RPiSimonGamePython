@@ -5,11 +5,8 @@ import math
 from time import sleep as wait
 
 class SimonGame(object):
-	def __init__(self, leds, buttons):
-		#Pass the LEDs as a dict, please.
-		
+	def __init__(self, leds, buttons):		
 		#let's create the LEDs
-		#Okay. Personally, this is gross. Please don't use this lol
 		self.LED = [(lambda x: LED(leds[x]))(x) for x in range(len(leds))]
 		self.Button = [(lambda x: Button(buttons[x]))(x) for x in range(len(buttons))]
 		#for i in range(0, 4):
@@ -82,7 +79,7 @@ class SimonGame(object):
 			wait(1)
 
 	def turnOnLEDs(self):
-		for LED in self.LEDs:
+		for LED in self.LED:
 			LED.turnOn()
 
 	def turnOffLEDs(self):

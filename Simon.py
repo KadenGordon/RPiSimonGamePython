@@ -7,7 +7,7 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 #creates game object with these pins
-#first arg passed is an array containing all LED pins, etc.
+#first parameter passed is an array containing all LED pins, etc.
 game = SimonGame([3, 5, 8, 10], [11, 13, 16, 18])
 
 ## LEDS:
