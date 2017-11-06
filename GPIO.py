@@ -40,4 +40,4 @@ class Button:
     def waitUntilNotPressed(self):
         while self.isPressed():
             pass
-        wait(0.2)
+        wait(0.005)
