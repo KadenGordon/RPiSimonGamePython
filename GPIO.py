@@ -23,13 +23,23 @@ class LED:
         return self.pin 
         
 class Button:
-    def __init__(self, port):
+    def __init__(self, port, idx):
         self.pin = port
+        self.pressed = 0
         #GPIO.setmode(GPIO.BOARD)
         GPIO.setup(self.pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-        
+        GPIO.add_event_detect(self.pin, GPIO.RISING, callback=self.pressed) 
+        GPIO.add_event_detect(self.pin, GPIO.FALLING, callback=self.released)
+
+    def pressed(self, idx):
+        #this runs in a seperate thread thank god
+        self.pressed = 1
+
+    def released(self, idx):
+        self.pressed = 0
+
     def isPressed(self):
-        return not GPIO.input(self.pin)
+        return self.pressed
     
     def cleanup(self):
         GPIO.cleanup(self.pin)
