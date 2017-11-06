@@ -8,7 +8,7 @@ GPIO.setwarnings(False)
 #creates game object with these pins
 #first parameter passed is an array containing all LED pins, etc.
 game = SimonGame([3, 5, 8, 10], [11, 13, 16, 18])
-
+numOfThings = len(game.LED)
 ## LEDS:
 #3: Top Left LED, 5: Top Right LED, 8: Bottom Right LED, 10: Bottom Left LED
 ## Buttons:
@@ -31,7 +31,7 @@ try:
 		while position < len(game.pattern):
 			goal = game.pattern[position]
 			#check if it's the right one, if it is, move on to next position, else game over.
-			buttonpos = i%4
+			buttonpos = i%numOfThings
 			button = game.Button[buttonpos]
 			if button.isPressed():
 				game.LED[buttonpos].turnOn()
@@ -45,7 +45,6 @@ try:
 					raise SystemExit
 					#needs to start the game from the beginning somehow...
 				button.waitUntilNotPressed()
-			else:
 				game.LED[buttonpos].turnOff()
 			i += 1
 		print "LEVEL COMPLETE"
