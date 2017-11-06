@@ -8,7 +8,7 @@ GPIO.setwarnings(False)
 #creates game object with these pins
 #first parameter passed is an array containing all LED pins, etc.
 game = SimonGame([3, 5, 8, 10], [11, 13, 16, 18])
-numOfThings = len(game.LED)
+numOfThings = game.NUM_OF_THINGS
 ## LEDS:
 #3: Top Left LED, 5: Top Right LED, 8: Bottom Right LED, 10: Bottom Left LED
 ## Buttons:
