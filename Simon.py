@@ -20,10 +20,7 @@ game.turnOffLEDs()
 
 game.start()
 wait(1)
-#loop
-try:
-	#forever
-	def playgame():
+def playgame():
 		while True:
 			position = 0
 			game.createLevel()
@@ -45,7 +42,8 @@ try:
 					else: 
 						game.gameOver()
 						print "fail " + str(button)
-						playgame()
+						break
+						break
 					button.waitUntilNotPressed()
 				else:
 					game.LED[buttonpos].turnOff()
@@ -54,6 +52,11 @@ try:
 			game.level += 1
 			game.turnOffLEDs()
 			wait(1)
+#loop
+try:
+	#forever
+	while True:
+		playgame()
 
 except KeyboardInterrupt:
 	GPIO.cleanup()
