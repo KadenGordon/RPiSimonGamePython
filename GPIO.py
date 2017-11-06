@@ -23,7 +23,7 @@ class LED:
         return self.pin 
         
 class Button:
-    def __init__(self, port, idx):
+    def __init__(self, port):
         self.pin = port
         self.pressed = 0
         #GPIO.setmode(GPIO.BOARD)
