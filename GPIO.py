@@ -28,7 +28,7 @@ class Button:
         self.pressed = 0
         #GPIO.setmode(GPIO.BOARD)
         GPIO.setup(self.pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-        GPIO.add_event_detect(self.pin, GPIO.RISING, callback=self.pressed()) 
+        GPIO.add_event_detect(self.pin, GPIO.RISING, callback=self.pressed) 
         GPIO.add_event_detect(self.pin, GPIO.FALLING, callback=self.released())
 
     def pressed(self):
