@@ -18,16 +18,11 @@ game = SimonGame(
 	18) #Bottom Left Button
 
 game.turnOffLEDs()
-wait(3)
 #stuff to start the game
 
-
-#set stuff up for a timer
-timeBetweenPresses = 750
-timeToPress = timeBetweenPresses
-#loop
 game.start()
-wait(3)
+wait(1)
+#loop
 try:
 	#forever
 	while True:
@@ -49,7 +44,9 @@ try:
 					print "did a thing"
 
 				else: 
+					game.gameOver()
 					print "fail " + str(button)
+					break
 				button.waitUntilNotPressed()
 			else:
 				game.LEDs[buttonpos].turnOff()
@@ -58,11 +55,7 @@ try:
 		game.level += 1
 		game.turnOffLEDs()
 		wait(1)
-			
 
-		#this is basically my timer
-		timeToPress += 100
-		wait(0.1)
 except KeyboardInterrupt:
 	GPIO.cleanup()
 except SystemExit:

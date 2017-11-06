@@ -64,7 +64,15 @@ class SimonGame(object):
 		return keys
 
 	def gameOver(self):
-		pass
+		for i in range(3):
+			self.turnOnLEDs()
+			wait(1)
+			self.turnOffLEDs()
+			wait(1)
+
+	def turnOnLEDs(self):
+		for LED in self.LEDs:
+			LED.turnOn()
 
 	def turnOffLEDs(self):
 		for LED in self.LEDs:
@@ -75,6 +83,6 @@ class SimonGame(object):
 			print flash
 			LED = self.LEDs[flash]
 			LED.turnOn()
-			wait(0.6)
+			wait(0.3)
 			LED.turnOff()
 			wait(0.2)
