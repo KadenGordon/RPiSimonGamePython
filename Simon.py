@@ -23,36 +23,37 @@ wait(1)
 #loop
 try:
 	#forever
-	while True:
-		position = 0
-		game.createLevel()
-		game.flashPattern(game.pattern)
-		#play level
-		i = 0
-		while position < len(game.pattern):
-			goal = game.pattern[position]
-			keys = game.getKeys()
-			#check if it's the right one, if it is, move on to next position, else game over.
-			buttonpos = i%4
-			button = game.Button[buttonpos]
-			if button.isPressed():
-				game.LED[buttonpos].turnOn()
-				if game.Button[goal].isPressed():
-					position += 1
-					print "did a thing"
+	def playgame():
+		while True:
+			position = 0
+			game.createLevel()
+			game.flashPattern(game.pattern)
+			#play level
+			i = 0
+			while position < len(game.pattern):
+				goal = game.pattern[position]
+				keys = game.getKeys()
+				#check if it's the right one, if it is, move on to next position, else game over.
+				buttonpos = i%4
+				button = game.Button[buttonpos]
+				if button.isPressed():
+					game.LED[buttonpos].turnOn()
+					if game.Button[goal].isPressed():
+						position += 1
+						print "did a thing"
 
-				else: 
-					game.gameOver()
-					print "fail " + str(button)
-					break
-				button.waitUntilNotPressed()
-			else:
-				game.LED[buttonpos].turnOff()
-			i += 1
-		print "LEVEL COMPLETE"
-		game.level += 1
-		game.turnOffLEDs()
-		wait(1)
+					else: 
+						game.gameOver()
+						print "fail " + str(button)
+						playgame()
+					button.waitUntilNotPressed()
+				else:
+					game.LED[buttonpos].turnOff()
+				i += 1
+			print "LEVEL COMPLETE"
+			game.level += 1
+			game.turnOffLEDs()
+			wait(1)
 
 except KeyboardInterrupt:
 	GPIO.cleanup()
