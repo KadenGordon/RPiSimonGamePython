@@ -7,15 +7,13 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 #creates game object with these pins
-game = SimonGame(
-	3,  #Top Left LED
-	5,  #Top Right LED
-	8,  #Bottom Right LED
-	10, #Bottom Left LED
-	11, #Top Left Button
-	13, #Top Right Button
-	16, #Bottom Right Button
-	18) #Bottom Left Button
+#first arg passed is an array containing all LED pins, etc.
+game = SimonGame([3, 5, 8, 10], [11, 13, 16, 18])
+
+## LEDS:
+#3: Top Left LED, 5: Top Right LED, 8: Bottom Right LED, 10: Bottom Left LED
+## Buttons:
+#11: Top Left Button, 13: Top Right Button, 16: Bottom Right Button, 18: Bottom Left Button
 
 game.turnOffLEDs()
 #stuff to start the game
@@ -36,10 +34,10 @@ try:
 			keys = game.getKeys()
 			#check if it's the right one, if it is, move on to next position, else game over.
 			buttonpos = i%4
-			button = game.Buttons[buttonpos]
+			button = game.Button[buttonpos]
 			if button.isPressed():
-				game.LEDs[buttonpos].turnOn()
-				if game.Buttons[goal].isPressed():
+				game.LED[buttonpos].turnOn()
+				if game.Button[goal].isPressed():
 					position += 1
 					print "did a thing"
 
@@ -49,7 +47,7 @@ try:
 					break
 				button.waitUntilNotPressed()
 			else:
-				game.LEDs[buttonpos].turnOff()
+				game.LED[buttonpos].turnOff()
 			i += 1
 		print "LEVEL COMPLETE"
 		game.level += 1
