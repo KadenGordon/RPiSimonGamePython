@@ -28,14 +28,14 @@ class Button:
         self.pressed = 0
         #GPIO.setmode(GPIO.BOARD)
         GPIO.setup(self.pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-        GPIO.add_event_detect(self.pin, GPIO.RISING, callback=self.pressed) 
-        GPIO.add_event_detect(self.pin, GPIO.FALLING, callback=self.released)
+        GPIO.add_event_detect(self.pin, GPIO.RISING, callback=self.pressed()) 
+        GPIO.add_event_detect(self.pin, GPIO.FALLING, callback=self.released())
 
-    def pressed(self, idx):
+    def pressed(self):
         #this runs in a seperate thread thank god
         self.pressed = 1
 
-    def released(self, idx):
+    def released(self):
         self.pressed = 0
 
     def isPressed(self):
